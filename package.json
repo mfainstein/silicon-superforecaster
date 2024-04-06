@@ -1,0 +1,28 @@
+{
+  "name": "silicon-judge",
+  "version": "1.0.0",
+  "description": "A platform designed to harness the collective intelligence of multiple large language models (LLMs) for making informed, unbiased predictions and evaluative judgments across a wide range of topics.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc"
+  },
+  "author": "Mark Fainstein",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.3"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.19.1",
+    "@langchain/anthropic": "^0.1.9",
+    "@langchain/community": "^0.0.44",
+    "@langchain/google-genai": "^0.0.10",
+    "@langchain/openai": "^0.0.25",
+    "dotenv": "^16.4.5",
+    "langchain": "^0.1.30",
+    "openai": "^4.32.1",
+    "ora": "^8.0.1",
+    "replicate": "^0.18.1"
+  }
+}
