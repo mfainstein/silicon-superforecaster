@@ -1,7 +1,7 @@
 
 # Silicon-Judge
 
-**Silicon-Judge** is a tool that combines the capabilities of multiple large language models (LLMs) to provide informed predictions and judgments on a wide array of topics. It is inspired by the principles found in "Superforecasters" and "Noise", focusing on accurate, unbiased insights by synthesizing the strengths of diverse LLMs with the concept of "wisdom of the crowds" and professional judgment.
+**Silicon-Judge** is a tool that combines the capabilities of multiple large language models (LLMs) to provide informed predictions and judgments on a wide array of topics. It is inspired by the principles found in "Superforecasters" and "Noise", focusing on accurate, unbiased insights by synthesizing the strengths of diverse LLMs with the concept of "wisdom of the crowds" and professional judgment. Just like our mind is a measuring device (that produces judgements), so can LLMs be used to produce judgements.
 
 ## Background
 
