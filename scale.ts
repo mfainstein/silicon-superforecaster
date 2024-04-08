@@ -66,6 +66,7 @@ export function resolveOutputParser(scale: Scale) {
             return StructuredOutputParser.fromZodSchema(
                 z.object({
                     probability: z.number().min(0).max(100).describe("The probability of the described outcome occurring as a number between 0 and 100"),
+                    confidenceLevel: z.number().min(0).max(100).optional().describe("The confidence level of the probability estimate as a number between 0 and 100"),
                 })
             );
         // return StructuredOutputParser.fromNamesAndDescriptions({

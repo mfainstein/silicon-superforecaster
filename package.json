@@ -20,9 +20,11 @@
     "@langchain/google-genai": "^0.0.10",
     "@langchain/openai": "^0.0.25",
     "dotenv": "^16.4.5",
+    "ervy": "^1.0.7",
     "langchain": "^0.1.30",
     "openai": "^4.32.1",
-    "ora": "^8.0.1",
-    "replicate": "^0.18.1"
+    "ora": "^5.4.1",
+    "replicate": "^0.18.1",
+    "spinnies": "^0.5.1"
   }
 }

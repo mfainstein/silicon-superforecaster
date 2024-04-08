@@ -3,13 +3,13 @@ import { Scale } from "./scale";
 import dotenv from "dotenv";
 import { measurement } from "./measurement";
 import { Population } from "./population";
+import { Summary } from "./summary";
 
 dotenv.config();
 
 let population = new Population();
 population.addAllModels(5);
-
-measurement("What is the probability of an earthquake with a magnitude of 7 or higher on the Richter scale occurring in Israel before 2100?", Scale.Probability, population).then((response) => {
-    console.log(response);
+measurement("What is the probability that there are more than 3000 professional piano tuners in Chicago", Scale.Probability, population).then((response) => {
+    Summary.create(response, Scale.Probability);
 });
 
