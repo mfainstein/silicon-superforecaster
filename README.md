@@ -34,3 +34,13 @@ To begin using Silicon-Judge:
    git clone <repository-url>
    cd silicon-judge
    npm install
+
+## Create a `.env` File
+it is important to create a `.env` file in the root directory of the project. The `.env` file should contain the following environment variables:
+
+```
+OPENAI_API_KEY=
+ANTHROPIC_API_KEY=
+REPLICATE_API_TOKEN=
+GOOGLE_API_KEY=
+```

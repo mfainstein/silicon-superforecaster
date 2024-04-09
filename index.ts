@@ -9,7 +9,12 @@ dotenv.config();
 
 let population = new Population();
 population.addAllModels(5);
-measurement("What is the probability that there are more than 3000 professional piano tuners in Chicago", Scale.Probability, population).then((response) => {
+measurement("What is the probability that the context window (for LLMs) measured by tokens will double by January 2025?", Scale.Probability, population).then((response) => {
     Summary.create(response, Scale.Probability);
 });
+
+// next step:
+// add commander so it can be installed as a command line app
+// add a way to specify the prompt and the scale from the command line
+// also there should be a way to configure the .env keys from the command line
 
