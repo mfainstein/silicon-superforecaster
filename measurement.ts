@@ -29,7 +29,7 @@ async function measureSequentiallyWithDelay(prompt: string, scale: Scale, model:
         // Wait for the specified delay before continuing to the next iteration
         await delay(delayMs);
     }
-    spinnies.succeed(model, { text: 'Measuring... '+model+" done", color: 'green' });
+    spinnies.succeed(model, { text: 'Measuring... '+model+" done ("+repetitions+")", color: 'green' });
     return results;
 }
 
