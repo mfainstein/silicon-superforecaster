@@ -1,10 +1,66 @@
 # Silicon-Judge
 
-**Silicon-Judge** combines the insights of multiple large language models (LLMs) to offer predictions and judgments across a broad range of topics. It leverages the collective intelligence principle alongside professional judgment, aiming for unbiased and accurate insights by utilizing the diverse strengths of LLMs.
+**Silicon-Judge** harnesses the collective intelligence of multiple large language models (LLMs) to deliver predictive insights and judgments across a wide array of topics. Drawing inspiration from the human brain's capability to serve as a judgement tool, Silicon-Judge operates on a similar principle, utilizing LLMs as measuring devices. 
+
+## LLM Context Window Doubling by 2025
+![Prediction of LLM Context Window Doubling by 2025](https://github.com/mfainstein/silicon-judge/blob/main/ProbabilityDoubleContextWindow.png)
 
 ## Background
 
 Silicon-Judge seeks to optimize decision-making through the aggregation of diverse LLM insights, guided by the principles outlined in "Superforecasters" and "Noise." This approach advocates for leveraging collective intelligence over individual expert analysis, integrating the analytical depth of LLMs to produce a balanced synthesis of expert insights and broad-based predictions.
+
+## Example Predictions and Judgments for Silicon-Judge
+
+To showcase Silicon-Judge's versatility in generating predictions and judgments across various domains, here are some example modifications to `index.ts`. These examples utilize both the `Scale.Probability` and `Scale.Options` to illustrate the platform's wide-ranging analytical capabilities.
+
+### Scale.Probability Examples
+
+1. **Technology Adoption Rate**:
+   Evaluate the probability of quantum computing becoming mainstream in consumer electronics by 2030.
+
+    ```typescript
+    let population = new Population();
+    population.addAllModels(5);
+    measurement("What is the probability of mainstream adoption of quantum computing in consumer electronics by 2030?", Scale.Probability, population).then((response) => {
+        Summary.create(response, Scale.Probability);
+    });
+    ```
+
+2. **Environmental Goals**:
+   Assess the likelihood of meeting the Paris Agreement's global warming limit by 2050.
+
+    ```typescript
+    let population = new Population();
+    population.addAllModels(20);
+    measurement("What is the probability of achieving the Paris Agreement's goal of limiting global warming to 1.5 degrees Celsius above pre-industrial levels by 2050?", Scale.Probability, population).then((response) => {
+        Summary.create(response, Scale.Probability);
+    });
+    ```
+
+### Scale.Options Examples
+
+3. **Future of Work**:
+   Identify which sector is poised for the greatest growth due to automation in the next decade.
+
+    ```typescript
+    let population = new Population();
+    population.addAllModels(20);
+    measurement("Which sector will experience the most significant growth due to automation in the next decade: (1) technology (2) healthcare (3) education (4) manufacturing?", Scale.Options, population).then((response) => {
+        Summary.create(response, Scale.Options);
+    });
+    ```
+
+4. **Space Exploration Milestones**:
+   Predict the next major milestone in space exploration by 2030.
+
+    ```typescript
+    let population = new Population();
+    population.addAllModels(5);
+    measurement("What will be the next major milestone in space exploration by 2030: (1) returning humans to the moon (2) launching a manned mission to Mars (3) discovering extraterrestrial life (4) establishing a permanent space station?", Scale.Options, population).then((response) => {
+        Summary.create(response, Scale.Options);
+    });
+    ```
+
 
 ## Features
 
@@ -39,8 +95,8 @@ To begin using Silicon-Judge:
 it is important to create a `.env` file in the root directory of the project. The `.env` file should contain the following environment variables:
 
 ```
-OPENAI_API_KEY=
-ANTHROPIC_API_KEY=
-REPLICATE_API_TOKEN=
-GOOGLE_API_KEY=
+OPENAI_API_KEY=<your_key>
+ANTHROPIC_API_KEY=<your_key>
+REPLICATE_API_TOKEN=<your_key>
+GOOGLE_API_KEY=<your_key>
 ```
