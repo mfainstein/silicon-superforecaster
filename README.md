@@ -4,7 +4,11 @@
 
 ## Mars by 2030?
 Measuring: What are the chances that humans will land on Mars by 2030?
-![Prediction of LLM Context Window Doubling by 2025](https://github.com/mfainstein/silicon-judge/blob/main/ProbabilityLandOnMars2030.png)
+![Prediction of the chances that humans will land on Mars by 2030](https://github.com/mfainstein/silicon-judge/blob/main/ProbabilityLandOnMars2030.png)
+
+## SpaceX Starship Launches in 2024?
+Measuring: How many SpaceX Starship launches reach space in 2024? (1) 1 (2) 2 (3) 3 (4) 4 (5) 5+
+![Prediction of how many SpaceX Starship launches reach space in 2024](https://github.com/mfainstein/silicon-judge/blob/main/SpaceXStarshipLaunches2024.png)
 
 ## Background
 
