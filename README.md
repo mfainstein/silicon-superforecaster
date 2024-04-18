@@ -4,7 +4,7 @@
 
 ## LLM Context Window Doubling by 2025
 Measuring: What is the probability that the context window (for LLMs) measured by tokens will double by January 2025?
-![Prediction of LLM Context Window Doubling by 2025](https://github.com/mfainstein/silicon-judge/blob/main/ProbabilityDoubleContextWindow.png)
+![Prediction of LLM Context Window Doubling by 2025](https://github.com/mfainstein/silicon-judge/blob/main/ProbabilityLandOnMars2030.png)
 
 ## Background
 
