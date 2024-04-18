@@ -12,66 +12,31 @@ export function resolveScaleSystemPrompt(sacle: Scale): string {
         case Scale.Probability:
             return "Provide a numerical probability between 0 and 100 that represents the likelihood of the described outcome occurring. \n{format_instructions}\n. Use base rate information and other available data, estimation and evaluation techniques."
         case Scale.Options:
-            return "Provide the option that best describes the outcome.\n{format_instructions}\n"
+            return "Provide the option (exact option ONLY from the options provided) that best describes the outcome.\n{format_instructions}\n. Use base rate information and other available data, estimation and evaluation techniques."
         default:
-            return "Provide a numerical value that best describes the outcome. Respond with the number only, without any additional text or explanation."
-    }
-}
-
-export function resolveSchema(scale: Scale) {
-    switch (scale) {
-        case Scale.Options:
-            {
-                const functionSchema = [
-                    {
-                        name: "option",
-                        description: "An option pair, consisting of an option identifier and the value of the option. For instance: (1) Yes",
-                        parameters: {
-                            type: "object",
-                            properties: {
-                                option: {
-                                    type: "string",
-                                    description: "The option identifier, for instance (1)",
-                                },
-                                value: {
-                                    type: "string",
-                                    description: "The value of the option",
-                                },
-                            },
-                            required: ["option", "value"],
-                        },
-                    },
-                ];
-                return {
-                    functions: functionSchema,
-                    function_call: { name: "option" },
-                }
-            }
-        case Scale.Probability:
-            return {}
-        default:
-            return {}
-
+            return "Provide a numerical probability between 0 and 100 that represents the likelihood of the described outcome occurring. \n{format_instructions}\n. Use base rate information and other available data, estimation and evaluation techniques."
     }
 }
 
 export function resolveOutputParser(scale: Scale) {
     switch (scale) {
         case Scale.Options:
-            return StructuredOutputParser.fromNamesAndDescriptions({
-                optionIdentifier: "The identifier of the selected option",
-                optionValue: "The value of the selected option",
-            });
+            return StructuredOutputParser.fromZodSchema(
+                z.object({
+                    optionIdentifier:  z.string().describe("The identifier of the selected option"),
+                    optionValue: z.string().describe("The value of the selected option"),
+                    reasoning: z.string().describe("The explanation for optionß choice"),
+                    confidenceLevel: z.number().min(0).max(100).describe("The confidence level of the probability estimate as a number between 0 and 100"),
+                })
+            );
         case Scale.Probability:
             return StructuredOutputParser.fromZodSchema(
                 z.object({
                     probability: z.number().min(0).max(100).describe("The probability of the described outcome occurring as a number between 0 and 100"),
-                    confidenceLevel: z.number().min(0).max(100).optional().describe("The confidence level of the probability estimate as a number between 0 and 100"),
+                    confidenceLevel: z.number().min(0).max(100).describe("The confidence level of the probability estimate as a number between 0 and 100"),
+                    reasoning: z.string().describe("The explanation for the probability choice"),
                 })
             );
-        // return StructuredOutputParser.fromNamesAndDescriptions({
-        //     probability: "The probability of the described outcome occurring as a number between 0 and 100",
-        // });
     }
 }
 

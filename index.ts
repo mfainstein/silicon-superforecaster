@@ -4,14 +4,29 @@ import dotenv from "dotenv";
 import { measurement } from "./measurement";
 import { Population } from "./population";
 import { Summary } from "./summary";
+import { WikipediaQueryRun } from "@langchain/community/tools/wikipedia_query_run";
 
 dotenv.config();
 
 let population = new Population();
-population.addAllModels(5);
-measurement("What is the probability that the context window (for LLMs) measured by tokens will double by January 2025?", Scale.Probability, population).then((response) => {
+population.addAllModels(7);
+measurement("What are the chances that humans will land on Mars by 2030?", Scale.Probability, population).then((response) => {
     Summary.create(response, Scale.Probability);
 });
+
+
+
+
+// const tool = new WikipediaQueryRun({
+//   topKResults: 3,
+//   maxDocContentLength: 10000,
+// });
+
+// const res = tool.call("OpenAI announces it has achieved AGI in 2024?").then((response) => {
+//     console.log(response);
+// });
+
+// console.log(res);
 
 // next step:
 // add commander so it can be installed as a command line app

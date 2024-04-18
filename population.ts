@@ -19,6 +19,13 @@ export class Population {
             this.addModel(model as Model, repetitions);
         }
     }
+
+    public addStrongModels(repetitions: number) {
+        this.addModel(Model.GPT4, repetitions);
+        this.addModel(Model.CLAUDE_OPUS, repetitions);
+        this.addModel(Model.GEMINI_PRO, repetitions);
+    }
+
     public get(): ModelPopulation[] {
         return this.population;
     }
