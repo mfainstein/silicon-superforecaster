@@ -2,8 +2,8 @@
 
 **Silicon-Judge** harnesses the collective intelligence of multiple large language models (LLMs) to deliver predictive insights and judgments across a wide array of topics. Drawing inspiration from the human brain's capability to serve as a judgement tool, Silicon-Judge operates on a similar principle, utilizing LLMs as measuring devices. 
 
-## LLM Context Window Doubling by 2025
-Measuring: What is the probability that the context window (for LLMs) measured by tokens will double by January 2025?
+## Mars by 2030?
+Measuring: What are the chances that humans will land on Mars by 2030?
 ![Prediction of LLM Context Window Doubling by 2025](https://github.com/mfainstein/silicon-judge/blob/main/ProbabilityLandOnMars2030.png)
 
 ## Background
