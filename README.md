@@ -45,7 +45,7 @@ To showcase Silicon-Judge's versatility in generating predictions and judgments 
 
     ```typescript
     let population = new Population();
-    population.addAllModels(20);
+    population.addStrongModels(20);
     measurement("Which sector will experience the most significant growth due to automation in the next decade: (1) technology (2) healthcare (3) education (4) manufacturing?", Scale.Options, population).then((response) => {
         Summary.create(response, Scale.Options);
     });
@@ -56,7 +56,8 @@ To showcase Silicon-Judge's versatility in generating predictions and judgments 
 
     ```typescript
     let population = new Population();
-    population.addAllModels(5);
+    population.addModel(Model.GPT4, 10);
+    population.addModel(Model.CLAUDE_SONNET, 10);
     measurement("What will be the next major milestone in space exploration by 2030: (1) returning humans to the moon (2) launching a manned mission to Mars (3) discovering extraterrestrial life (4) establishing a permanent space station?", Scale.Options, population).then((response) => {
         Summary.create(response, Scale.Options);
     });
