@@ -1,22 +1,22 @@
-# Silicon-Judge
+# Silicon-Superforecaster
 
-**Silicon-Judge** harnesses the collective intelligence of multiple large language models (LLMs) to deliver predictive insights and judgments across a wide array of topics. Drawing inspiration from the human brain's capability to serve as a judgement tool, Silicon-Judge operates on a similar principle, utilizing LLMs as measuring devices. 
+**silicon-superforecaster** harnesses the collective intelligence of multiple large language models (LLMs) to deliver predictive insights and judgments across a wide array of topics. Drawing inspiration from the human brain's capability to serve as a judgement tool, silicon-superforecaster operates on a similar principle, utilizing LLMs as measuring devices. 
 
 ## Mars by 2030?
 Measuring: What are the chances that humans will land on Mars by 2030?
-![Prediction of the chances that humans will land on Mars by 2030](https://github.com/mfainstein/silicon-judge/blob/main/ProbabilityLandOnMars2030.png)
+![Prediction of the chances that humans will land on Mars by 2030](https://github.com/mfainstein/silicon-superforecaster/blob/main/ProbabilityLandOnMars2030.png)
 
 ## SpaceX Starship Launches in 2024?
 Measuring: How many SpaceX Starship launches reach space in 2024? (1) 1 (2) 2 (3) 3 (4) 4 (5) 5+
-![Prediction of how many SpaceX Starship launches reach space in 2024](https://github.com/mfainstein/silicon-judge/blob/main/SpaceXStarshipLaunches2024.png)
+![Prediction of how many SpaceX Starship launches reach space in 2024](https://github.com/mfainstein/silicon-superforecaster/blob/main/SpaceXStarshipLaunches2024.png)
 
 ## Background
 
-Silicon-Judge seeks to optimize decision-making through the aggregation of diverse LLM insights, guided by the principles outlined in "Superforecasters" and "Noise." This approach advocates for leveraging collective intelligence over individual expert analysis, integrating the analytical depth of LLMs to produce a balanced synthesis of expert insights and broad-based predictions.
+silicon-superforecaster seeks to optimize decision-making through the aggregation of diverse LLM insights, guided by the principles outlined in "Superforecasters" and "Noise." This approach advocates for leveraging collective intelligence over individual expert analysis, integrating the analytical depth of LLMs to produce a balanced synthesis of expert insights and broad-based predictions.
 
-## Example Predictions and Judgments for Silicon-Judge
+## Example Predictions and Judgments for Silicon-Forecaster
 
-To showcase Silicon-Judge's versatility in generating predictions and judgments across various domains, here are some example modifications to `index.ts`. These examples utilize both the `Scale.Probability` and `Scale.Options` to illustrate the platform's wide-ranging analytical capabilities.
+To showcase silicon-superforecaster's versatility in generating predictions and judgments across various domains, here are some example modifications to `index.ts`. These examples utilize both the `Scale.Probability` and `Scale.Options` to illustrate the platform's wide-ranging analytical capabilities.
 
 ### Scale.Probability Examples
 
@@ -89,12 +89,12 @@ The Silicon-Judge platform consists of several key TypeScript files:
 
 ## Getting Started
 
-To begin using Silicon-Judge:
+To begin using Silicon-Forecaster:
 
 1. Clone the repository and install dependencies:
    ```bash
    git clone <repository-url>
-   cd silicon-judge
+   cd silicon-superforecaster
    npm install
 
 ## Create a `.env` File
