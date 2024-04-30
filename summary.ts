@@ -54,7 +54,7 @@ export class Summary {
 
             // Calculate average
             const avg = probabilities.filter((prob: any) => prob != "N/A").reduce((acc: any, curr: any) => acc + curr, 0) / probabilities.length;
-            return { key: modelName, value: this.toFixed(avg), style: bg('blue') };
+            return { key: modelName, value: this.toFixed(avg) || 0, style: bg('blue') };
         });
         return results;
     }
@@ -72,7 +72,7 @@ export class Summary {
 
             // Calculate average
             const avg = confidenceLevels.filter((prob: any) => prob != "N/A").reduce((acc: any, curr: any) => acc + curr, 0) / confidenceLevels.length;
-            return { key: modelName, value: this.toFixed(avg), style: bg('red') };
+            return { key: modelName, value: this.toFixed(avg) || 0, style: bg('red') };
         });
         return results;
     }
@@ -104,7 +104,7 @@ export class Summary {
             let standardDeviation = Math.sqrt(variance);
             const ervy = require('ervy')
             const { bg } = ervy
-            return { key: modelName, value: this.toFixed(standardDeviation), style: bg('blue') };
+            return { key: modelName, value: this.toFixed(standardDeviation) || 0, style: bg('blue') };
         });
         return results;
     }

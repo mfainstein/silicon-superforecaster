@@ -5,14 +5,16 @@ import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { RunnableSequence } from "@langchain/core/runnables";
 import { StringOutputParser } from "@langchain/core/output_parsers";
 import dotenv from "dotenv";
+import { CalibrationMethod } from "./calibrate";
 dotenv.config();
 
-export async function measure(prompt: string, scale: Scale, model: Model): Promise<any> {
+export async function measure(prompt: string, model: Model, scale:Scale, calibratedTemplate:string): Promise<any> {
     let modelInstance = createModel(model);
-    modelInstance.bind(resolveScaleFormat(scale));
-    let basicPrompt = ChatPromptTemplate.fromTemplate(
-        resolveScaleSystemPrompt(scale) + "\nthe query:{question}"
-    );
+    // let toolResponse = tool? JSON.parse(await call(tool, prompt)) : undefined;
+    // let toolPrompt = toolResponse? "Recent information to consider: "+ toolResponse[0].content : "";
+    // console.log(toolPrompt);
+    // modelInstance.bind(resolveScaleFormat(scale));
+    let basicPrompt = ChatPromptTemplate.fromTemplate(calibratedTemplate);
     let parser = resolveOutputParser(scale);
     //@ts-ignore
     const chain = RunnableSequence.from([basicPrompt, modelInstance, parser]); 
