@@ -8,9 +8,7 @@ import { CalibrationMethod } from "./calibrate";
 dotenv.config();
 
 let population = new Population();
-population.addStrongModels(3, CalibrationMethod.TAVILY_SEARCH);
-// export const HARD_CODED_CALIBRATION = "Based on the provided sources, there is no clear indication that Israel will win the 2024 Eurovision Song Contest. The sources mention several countries as favorites to win, including Ireland, Switzerland, Ukraine, and Croatia. The bookmakers' odds suggest that these countries have the highest chances of winning the competition. However, the sources do not specifically mention Israel as a strong contender for the 2024 Eurovision victory. It is important to note that the odds and predictions can change as the competition progresses, and the ultimate winner will be determined by the performances and votes received during the contest.";
-export const HARD_CODED_CALIBRATION = "";
+population.addAllModels(3, CalibrationMethod.TAVILY_SEARCH);
 measurement("Israel will hold new elections by the end of 2024", Scale.Probability, population).then((response) => {
     Summary.create(response, Scale.Probability, true);
 });
