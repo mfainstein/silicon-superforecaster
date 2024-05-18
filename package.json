@@ -2,7 +2,7 @@
   "name": "silicon-judge",
   "version": "1.0.0",
   "description": "A platform designed to harness the collective intelligence of multiple large language models (LLMs) for making informed, unbiased predictions and evaluative judgments across a wide range of topics.",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc"
@@ -20,6 +20,7 @@
     "@langchain/exa": "^0.0.3",
     "@langchain/google-genai": "^0.0.10",
     "@langchain/openai": "^0.0.25",
+    "axios": "^1.6.8",
     "dotenv": "^16.4.5",
     "ervy": "^1.0.7",
     "langchain": "^0.1.30",

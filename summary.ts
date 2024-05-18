@@ -9,17 +9,17 @@ export class Summary {
         return roundedNumber;
     }
 
-    public static calculateOptionCount(data:any[]): any {
-        
+    public static calculateOptionCount(data: any[]): any {
+
         const ervy = require('ervy')
         const { fg } = ervy
-        let styles = [fg('cyan', '+ '), fg('magenta', '- '), fg('yellow', '0 '), fg('red', '* '), fg('green', 'x '), fg('blue', 'o '), fg('white', '# ') ]
-        const optionValuesCount:any = {};
-        
-        const optionValuesArray = data.map(group => {    
+        let styles = [fg('cyan', '+ '), fg('magenta', '- '), fg('yellow', '0 '), fg('red', '* '), fg('green', 'x '), fg('blue', 'o '), fg('white', '# ')]
+        const optionValuesCount: any = {};
+
+        const optionValuesArray = data.map(group => {
             const optionValues = group.map((entry: any) => JSON.parse(entry.result).optionValue);
             // count instances of each optionValues
-            return  optionValues;
+            return optionValues;
         });
         // sum up appearances of each optionValue inside optionValues
         for (let optionValues of optionValuesArray) {
@@ -32,7 +32,7 @@ export class Summary {
             }
         }
         let graphResults = [];
-        let i=0;
+        let i = 0;
         for (let optionValue in optionValuesCount) {
             // TODO: make sure there enough styles for all the optionValues
             graphResults.push({ key: optionValue, value: optionValuesCount[optionValue], style: styles[i] });
@@ -127,7 +127,7 @@ export class Summary {
         return { totalAverage: this.toFixed(totalAvg), totalVariance: this.toFixed(totalVariance), totalStandardDeviation: this.toFixed(totalStandardDeviation) };
     };
 
-    public static create(data: any[], scale: Scale): void {
+    public static create(data: any[], scale: Scale, verbose: boolean = false): void {
         const ervy = require('ervy')
         const { bar, pie, bullet, donut, gauge, scatter } = ervy
         switch (scale) {
@@ -145,8 +145,10 @@ export class Summary {
                     console.log(bar(barAverageConfidenceLevelData, { barWidth: 20 }));
                     let totals = this.calculateTotals(data);
                     console.log("Average: " + totals.totalAverage + " Variance: " + totals.totalVariance + " Standard Deviation: " + totals.totalStandardDeviation);
-                    console.log("Reasoning: ");
-                    console.log(this.listReasoning(data));
+                    if (verbose) {
+                        console.log("Reasoning: ");
+                        console.log(this.listReasoning(data));
+                    }
                 }
                 break;
             case Scale.Options:
@@ -158,6 +160,10 @@ export class Summary {
                 console.log("Average Confidence Level by Model: ");
                 let barAverageConfidenceLevelData = this.calculateAverageConfidenceLevelByModel(data)
                 console.log(bar(barAverageConfidenceLevelData, { barWidth: 20 }));
+                if (verbose) {
+                    console.log("Reasoning: ");
+                    console.log(this.listReasoning(data));
+                }
             default:
         }
 
