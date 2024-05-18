@@ -4,11 +4,11 @@
 
 ## Mars by 2030?
 Measuring: What are the chances that humans will land on Mars by 2030?
-![Prediction of the chances that humans will land on Mars by 2030](https://github.com/mfainstein/silicon-superforecaster/blob/main/ProbabilityLandOnMars2030.png)
+![Prediction of the chances that humans will land on Mars by 2030](https://github.com/mfainstein/silicon-superforecaster/blob/main/screenshots/ProbabilityLandOnMars2030.png)
 
 ## SpaceX Starship Launches in 2024?
 Measuring: How many SpaceX Starship launches reach space in 2024? (1) 1 (2) 2 (3) 3 (4) 4 (5) 5+
-![Prediction of how many SpaceX Starship launches reach space in 2024](https://github.com/mfainstein/silicon-superforecaster/blob/main/SpaceXStarshipLaunches2024.png)
+![Prediction of how many SpaceX Starship launches reach space in 2024](https://github.com/mfainstein/silicon-superforecaster/blob/main/screenshots/SpaceXStarshipLaunches2024.png)
 
 ## Background
 
@@ -19,8 +19,17 @@ silicon-superforecaster seeks to optimize decision-making through the aggregatio
 To showcase silicon-superforecaster's versatility in generating predictions and judgments across various domains, here are some example modifications to `index.ts`. These examples utilize both the `Scale.Probability` and `Scale.Options` to illustrate the platform's wide-ranging analytical capabilities.
 
 ### Scale.Probability Examples
+1. **Politics**:
+   Evaluate the probability of Israel holding new elections by the end of 2024.
+    ```typescript
+    let population = new Population();
+    population.addAllModels(5);
+    measurement("Israel will hold new elections by the end of 2024", Scale.Probability, population).then((response) => {
+        Summary.create(response, Scale.Probability, true /* verbose */);
+    });
+    ```
 
-1. **Technology Adoption Rate**:
+2. **Technology Adoption Rate**:
    Evaluate the probability of quantum computing becoming mainstream in consumer electronics by 2030.
 
     ```typescript
@@ -31,7 +40,7 @@ To showcase silicon-superforecaster's versatility in generating predictions and 
     });
     ```
 
-2. **Environmental Goals**:
+3. **Environmental Goals**:
    Assess the likelihood of meeting the Paris Agreement's global warming limit by 2050.
 
     ```typescript
@@ -105,4 +114,5 @@ OPENAI_API_KEY=<your_key>
 ANTHROPIC_API_KEY=<your_key>
 REPLICATE_API_TOKEN=<your_key>
 GOOGLE_API_KEY=<your_key>
+TAVILY_API_KEY=<your_key>
 ```
