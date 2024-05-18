@@ -75,22 +75,21 @@ To showcase silicon-superforecaster's versatility in generating predictions and 
         Summary.create(response, Scale.Options);
     });
     ```
-
-
-## Features
-
-- **Comprehensive LLM Integration:** Ensures a broad spectrum of insights by utilizing a variety of large language models.
-- **Flexible Topic Coverage:** Equipped to generate insights on an extensive range of subjects, from market trends to societal dynamics.
-- **Bias Reduction:** Mitigates individual biases through the aggregation of model outputs, embracing the wisdom of the crowds.
-- **User-Friendly Design:** Simplifies interactions, making it easy for users to request and receive information.
+## Process outline
+* Setup phase: The platform is initialized with the necessary configurations and models.
+* Calibration phase: The models are calibrated to ensure the most recent data is available. 
+  * Model creates a query to fetch the most recent data through the chosen tool
+  * Fetch the most recent data using the generated query
+  * Model summarizes the data for the purpose of judging / forecasting
+* Measurement phase: The calibrated models provide their predictions and judgments on the specified topic.
+* Summary phase: The platform synthesizes the outputs from the models into various histograms and summaries for user consumption.
 
 ## Core Components
-
-The Silicon-Judge platform consists of several key TypeScript files:
 
 - `index.ts`: Facilitates user interactions and manages the overall workflow of the platform.
 - `measure.ts`: Defines the framework for quantifying predictions and judgments, ensuring that outcomes from different populations of LLM judges are standardized and comparable.
 - `measurement.ts`: Handles the collection and documentation of outputs from specific populations of LLM judges, applying the standardization criteria to produce structured, comparable insights.
+- `calibrate.ts`: Calibration phase per model (currently support Wiki & Tavily Search) to get the most recent data available.
 - `model.ts`: Coordinates the input and integration of outputs from multiple LLMs.
 - `population.ts`: Describes the "population object," detailing the collective of LLM judges, including their distribution and management for particular measurements.
 - `scale.ts`: Provides mechanisms for adjusting the scope and scale of predictions for uniform analysis across different contexts.
